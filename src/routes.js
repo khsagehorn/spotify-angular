@@ -1,4 +1,5 @@
-var app = angular.module('myApp', ['ngRoute']);
+var spotifyApp = angular.module('spotifyApp', []);
+
 
 app.config(function($routeProvider, $httpProvider){
   $routeProvider
@@ -9,3 +10,5 @@ app.config(function($routeProvider, $httpProvider){
   })
   .otherwise({redirectTo: '/'});
 });
+
+

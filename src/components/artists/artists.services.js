@@ -7,7 +7,7 @@
 
     return {
       search: function(query) {
-        return $http.get(api+"search?q="+query)
+        return $http.get(api+"search?q="+query+"&type=artist")
         .then(function(albums){
           console.log(albums.album.items[0].id);
           return albums;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='myApp'>
+<html lang="en" ng-app='spotifyApp'>
   <head>
     <meta charset="utf-8">
     <title>Untitled</title>
@@ -8,11 +8,24 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <!-- <link rel="stylesheet" type="text/css" href="assets/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
   </head>
   <body>
 
-  <div ng-controller="artistSearchController">{{albums}}</div>
+  <div ng-controller="artistSearchController">
+      <div>
+        <form name="artistSearch" ng-submit="search(query)">
+            <input type="text" id="searchField" ng-model="query"></input>
+            <button type="submit">Search</button>
+        </form>
+      </div>
+
+    <img src="{{artist.artists.items[0].images[1].url}}" alt="">
+
+    <div ng-repeat="related in related">
+        <img src="{{related.images[2].url}}" alt="">
+    </div>
+  </div>
 
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -23,7 +36,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
     <script type="text/javascript" src="routes.js"></script>
     <script type="text/javascript" src="components/artists/artists.controllers.js"></script>
-    <script type="text/javascript" src="components/artists/artists.services.js"></script>   
+    <!-- <script type="text/javascript" src="components/artists/artists.services.js"></script>    -->
 
   </body>
 </html>
