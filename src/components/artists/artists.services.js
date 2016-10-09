@@ -7,11 +7,14 @@
 
     return {
       search: function(query) {
-        return $http.get(api+"search/"+query)
+        return $http.get(api+"search?q="+query)
         .then(function(albums){
-          console.log('response', response);
-          console.log(response.album.items[0].id);
+          console.log(albums.album.items[0].id);
           return albums;
+        })
+        .catch(function(err){
+          console.log('err', res);
+          return err;
         });
       },
 
