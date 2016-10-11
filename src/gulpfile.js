@@ -21,10 +21,10 @@ var runSequence = require('run-sequence');
 
 var paths = {
   styles: [
-    './src/client/css/*.css',
+    './assets/css/*.css',
   ],
   scripts: [
-    './src/*.js',
+    './src/components/**/*.js',
   ]
 };
 
@@ -85,10 +85,11 @@ gulp.task('clean', function() {
 });
 
 gulp.task('minify-css', function() {
-  var opts = {comments:true, spare:true};
+  // var opts = {comments:true, spare:true};
   gulp.src(paths.styles)
-    .pipe(minifyCSS(opts))
-    .pipe(gulp.dest('./dist/client/css/'));
+    .pipe(minifyCSS())
+    .pipe(concat('style.min.css'))
+    .pipe(gulp.dest('./dist/assets/css/'));
 });
 
 gulp.task('minify-js', function() {
