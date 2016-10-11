@@ -22,7 +22,7 @@
       <div>
         <form name="artistSearch" ng-submit="search(query)">
             <input type="text" id="searchField" ng-model="query"></input><br>
-            <button type="submit">search</button>
+            <button id="searchButton" type="submit">search</button>
         </form>
       </div>
 
@@ -30,11 +30,17 @@
     <h1>{{artist.artists.items[0].name}}</h1>
 
     <div ng-repeat="related in related">
-        <div id="relatedBox" class="col-xs-12 col-sm-12 col-md-6">
+        <div id="relatedBox" class="col-xs-12 col-sm-12 col-md-6" ng-controller="previewController">
             <div class="relatedImgDiv">
             <img class="relatedImg" src="{{related.images[1].url}}" alt="">
             <h2 class="">{{related.name}}</h2>
             <h3>Genre:&nbsp;{{related.genres[0]}}</h3>
+            <form name="getPreview" ng-submit="preview(related.id)">
+                <button class="previewButton" type="submit">listen to a preview</button>
+                <!-- <audio>
+                    <source src="{{track.preview_url}}" type="audio/mpeg">
+                </audio> -->
+            </form>
             </div>
         </div>
     </div>

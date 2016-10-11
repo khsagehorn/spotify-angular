@@ -13,7 +13,7 @@ body{
       height:75px;
     }
 
-    button{
+    #searchButton{
       width: 40%;
       font-size: 3rem;
     }
@@ -32,7 +32,7 @@ body{
       height:75px;
     }
 
-    button{
+    #searchButton{
       width: 40%;
       font-size: 5rem;
     }
@@ -86,7 +86,7 @@ body{
   margin-top: 2rem;
 }
 
-button {
+#searchButton {
   width: 250px;
   height: 70px;
   margin: auto;
@@ -111,7 +111,7 @@ button {
 }
 
 
-button:hover {
+#searchButton:hover {
   background: #d2d2d2;
   text-decoration: none;
 }
