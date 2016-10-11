@@ -1,7 +1,7 @@
-var spotifyApp = angular.module('spotifyApp', []);
+var spotifyApp = angular.module('spotifyApp', ['ngRoute']);
 
 
-app.config(function($routeProvider, $httpProvider){
+spotifyApp.config(function($routeProvider, $httpProvider){
   $routeProvider
   .when('/', {
     templateUrl: './components/artists/artists.html',
