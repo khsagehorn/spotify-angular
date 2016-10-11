@@ -2,7 +2,7 @@
 <html lang="en" ng-app='spotifyApp'>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Untitled</title>
     
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -14,18 +14,14 @@
   </head>
   <body>
 
-  <header>
-      <h1>Spotifynd</h1>
-      <p>enter an artist you like. find something new.</p>
-  </header>
+    <ng-include src="'components/header/header.html'"></ng-include>
 
   <div ng-controller="artistSearchController">
-      <div>
         <form name="artistSearch" ng-submit="search(query)">
             <input type="text" id="searchField" ng-model="query" autofocus="true"></input><br>
             <button id="searchButton" type="submit" ng-click="click = !click">search</button>
         </form>
-      </div>
+
 
     <div ng-show="click">
         <img class="artistImg" src="{{artist.artists.items[0].images[1].url}}" alt="">
@@ -41,29 +37,21 @@
                 <h2 class="">{{related.name}}</h2>
                 <h3>Genre:&nbsp;{{related.genres[0]}}</h3>
 
-                <span class="btnContainer">
+                <div class="btnContainer">
                     <form name="getPreview" ng-submit="preview(related.id)">
-                    <button class="smallBtn col-xs-4 col-sm-4" type="submit">listen to a preview</button>
-                </form>
-                <a href="{{related.external_urls.spotify}}" target="_blank">
-                <button class="smallBtn col-xs-4 col-sm-4">spotify page</button></a>
+                    <button class="smallBtn previewBtn col-xs-6 col-sm-6" type="submit">preview</button>
+                    </form>
+                    <a href="{{related.external_urls.spotify}}" target="_blank"><button class="smallBtn col-xs-6 col-sm-6">spotify page</button></a>
 
 
-                </span>
+                </div>
             </div>
         </div>
     </div>
     </div>
   </div>
-  <div id="divider">
-  </div>
-  <footer>
-      <p>2016  K. Hunter Sagehorn
-      <a href="https://github.com/khsagehorn"><i class="fa fa-github" aria-hidden="true"></i></a>
-      <a href="https://www.linkedin.com/in/klaushuntersagehorn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-      <a href="mailto:huntersagehorn@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-      </p>
-  </footer>
+
+  <ng-include src="'components/footer/footer.html'"></ng-include>
 
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -75,7 +63,6 @@
     <script type="text/javascript" src="routes.js"></script>
     <script type="text/javascript" src="components/artists/artists.controllers.js"></script>
     <script type="text/javascript" src="components/preview/preview.controllers.js"></script>
-    <!-- <script type="text/javascript" src="components/artists/artists.services.js"></script>    -->
 
   </body>
 </html>
