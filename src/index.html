@@ -33,29 +33,35 @@
         <h3>Related Artists</h3>
         <hr>
     </div>
-
+    <div class="container">
     <div ng-repeat="related in related">
         <div id="relatedBox" class="col-xs-12 col-sm-12 col-md-6" ng-controller="previewController">
             <div class="relatedImgDiv">
                 <img class="relatedImg" src="{{related.images[1].url}}" alt="">
                 <h2 class="">{{related.name}}</h2>
                 <h3>Genre:&nbsp;{{related.genres[0]}}</h3>
-                <form name="getPreview" ng-submit="preview(related.id)">
-                    <button class="previewButton" type="submit">listen to a preview</button>
-                <!-- <audio>
-                    <source src="{{track.preview_url}}" type="audio/mpeg">
-                </audio> -->
+
+                <span class="btnContainer">
+                    <form name="getPreview" ng-submit="preview(related.id)">
+                    <button class="smallBtn col-xs-4 col-sm-4" type="submit">listen to a preview</button>
                 </form>
+                <a href="{{related.external_urls.spotify}}" target="_blank">
+                <button class="smallBtn col-xs-4 col-sm-4">spotify page</button></a>
+
+
+                </span>
             </div>
         </div>
     </div>
+    </div>
   </div>
-
+  <div id="divider">
+  </div>
   <footer>
-      <p>2016 by K. Hunter Sagehorn
-      <i class="fa fa-github" aria-hidden="true"></i>
-      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-      <i class="fa fa-envelope" aria-hidden="true"></i>
+      <p>2016  K. Hunter Sagehorn
+      <a href="https://github.com/khsagehorn"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/klaushuntersagehorn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+      <a href="mailto:huntersagehorn@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </p>
   </footer>
 
