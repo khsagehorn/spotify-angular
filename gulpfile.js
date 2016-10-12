@@ -14,7 +14,7 @@ var runSequence = require('run-sequence');
 
 gulp.task('connect', function () {
   connect.server({
-    root: './src/',
+    root: './',
     port: 8888,
     livereload: true
   });
@@ -28,7 +28,7 @@ gulp.task('connectDist', function () {
 });
 
 gulp.task('html', function () {
-  gulp.src('./src/*.html')
+  gulp.src('./*.html')
     .pipe(connect.reload());
 });
 
@@ -45,7 +45,7 @@ gulp.task('jshint', function() {
 
 gulp.task('watch', function() {
   gulp.watch('./src/components/**/*.js', ['jshint']);
-  gulp.watch(['./src/*.html'], ['html']);
+  gulp.watch(['./*.html'], ['html']);
   gulp.watch(['./src/assets/css/*.css'], ['css']);
 });
 
@@ -68,7 +68,7 @@ gulp.task('minify-js', function() {
 });
 
 gulp.task('copy-html-files', function () {
-  gulp.src('./src/*.html')
+  gulp.src('./*.html')
     .pipe(gulp.dest('./dist/'));
 });
 

@@ -10,11 +10,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/yeti/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/css/main.css">
   </head>
   <body>
 
-    <ng-include src="'components/header/header.html'"></ng-include>
+    <ng-include src="'src/components/header/header.html'"></ng-include>
 
   <div ng-controller="artistSearchController">
         <form name="artistSearch" ng-submit="search(query)">
@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <ng-include src="'components/footer/footer.html'"></ng-include>
+  <ng-include src="'src/components/footer/footer.html'"></ng-include>
 
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -60,9 +60,9 @@
     
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-    <script type="text/javascript" src="routes.js"></script>
-    <script type="text/javascript" src="components/artists/artists.controllers.js"></script>
-    <script type="text/javascript" src="components/preview/preview.controllers.js"></script>
+    <script type="text/javascript" src="src/routes.js"></script>
+    <script type="text/javascript" src="src/components/artists/artists.controllers.js"></script>
+    <script type="text/javascript" src="src/components/preview/preview.controllers.js"></script>
 
   </body>
 </html>
