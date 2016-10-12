@@ -41,6 +41,9 @@
                     <form name="getPreview" ng-submit="preview(related.id)">
                     <button class="smallBtn previewBtn col-xs-6 col-sm-6" type="submit">preview</button>
                     </form>
+                    <form name="getTrack" ng-submit="track(related.id)">
+                        <a href="{{tracks.tracks[0].external_urls.spotify}}" target="_blank"><button class="smallBtn col-xs-6 col-sm-6 trackBtn">top track</button></a>
+                    </form>
                     <a href="{{related.external_urls.spotify}}" target="_blank"><button class="smallBtn col-xs-6 col-sm-6">spotify page</button></a>
 
 
