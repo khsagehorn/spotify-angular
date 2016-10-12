@@ -16,6 +16,10 @@ h1{
   margin-bottom:2rem; 
 }
 
+p{
+  margin-bottom: -5px;
+}
+
 
 #relatedBox{
   height: 400px;
@@ -47,7 +51,7 @@ button{
   right: 0;
   top: 0;
   bottom: 0;
-  border: 3px solid #1DB954;
+  border: 1px solid #1DB954;
   font-family: 'Montserrat', sans-serif;
   color: black;
   line-height: 64px;
@@ -69,15 +73,6 @@ button:hover{
   color: white;
   text-decoration: none;  
 }
-
-
-
-/*#searchButton {
-  width: 250px;
-  height: 70px;
-  font-size: 22px;
-  border: 3px solid #1DB954;
-}*/
 
 .btnContainer{
   display:inline-flex;
@@ -156,6 +151,10 @@ footer {
     h3{
       font-size: 1.5rem;
     }
+
+    .previewBtn{
+      display: none;
+    }
         
 }
 
@@ -196,11 +195,19 @@ footer {
     width: 250px;
     height: 70px;
     font-size: 22px;
-    border: 3px solid #1DB954;
+    border: 2px solid #1DB954;
   }
 
   h3{
     font-size: 2rem;
+  }
+
+  .previewBtn{
+    display: inherit;
+  }
+
+  .trackBtn{
+    display: none;
   }
 
 }
@@ -211,6 +218,10 @@ footer {
       border-radius: 280px;
       width: 30%;
     }
+
+  .previewBtn{
+    display: inherit;
+  }
 
 }
 

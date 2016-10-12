@@ -22,6 +22,16 @@ spotifyApp.controller('previewController', function($scope, $http){
     }
   }
 
+  $scope.track = function(id){
+    $http.get("https://api.spotify.com/v1/artists/"+id+"/top-tracks?country=US")
+    .success(function(data){
+      $scope.tracks = data;
+      window.open(data.tracks[0].external_urls.spotify);
+    })
+
+ 
+  }
+
   var playAudio = function(){
     audioObject.play(); 
     playing = true;
