@@ -72,12 +72,12 @@ button:hover{
 
 
 
-#searchButton {
+/*#searchButton {
   width: 250px;
   height: 70px;
   font-size: 22px;
   border: 3px solid #1DB954;
-}
+}*/
 
 .btnContainer{
   display:inline-flex;
@@ -186,10 +186,17 @@ footer {
     }
 
   .smallBtn{
-  width:150px;
-  height:40px;
-  font-size: 12px;
-  line-height: 35px;
+    width:150px;
+    height:40px;
+    font-size: 12px;
+    line-height: 35px;
+  }
+
+  #searchButton {
+    width: 250px;
+    height: 70px;
+    font-size: 22px;
+    border: 3px solid #1DB954;
   }
 
   h3{
