@@ -8,7 +8,10 @@ spotifyApp.controller('artistSearchController', function($scope, $http){
   $scope.search = function(){
     $http.get("https://api.spotify.com/v1/search?q="+$scope.query+"&type=artist")
     .success(function(data){
+      $scope.click = false;
       $scope.artist = data;
+      $scope.error = "";
+      console.log(data);
       artistID = data.artists.items[0].id;
     })
     .then(function(){
@@ -17,6 +20,11 @@ spotifyApp.controller('artistSearchController', function($scope, $http){
         $scope.related = data.artists;
         $scope.click = true;
       })
+    })
+    .catch(function(){
+        console.log("error");
+        $scope.error = "whoops. we didn't find anyone with that name.";
+        $scope.click = false;
     })
   }
 

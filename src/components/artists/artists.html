@@ -5,33 +5,35 @@
         </form>
 
 
+    <h2>{{error}}</h2>
+    
     <div ng-show="click">
         <img class="artistImg" src="{{artist.artists.items[0].images[1].url}}" alt="">
         <h2>{{artist.artists.items[0].name}}</h2>
         <h3>Related Artists</h3>
         <hr>
-    </div>
-    <div class="container">
-    <div ng-repeat="related in related">
-        <div id="relatedBox" class="col-xs-12 col-sm-12 col-md-6" ng-controller="previewController">
-            <div class="relatedImgDiv">
-                <img class="relatedImg" src="{{related.images[1].url}}" alt="">
-                <h2 class="">{{related.name}}</h2>
-                <h3>Genre:&nbsp;{{related.genres[0]}}</h3>
+        <div class="container">
+        <div ng-repeat="related in related">
+            <div id="relatedBox" class="col-xs-12 col-sm-12 col-md-6" ng-controller="previewController">
+                <div class="relatedImgDiv">
+                    <img class="relatedImg" src="{{related.images[1].url}}" alt="">
+                    <h2 class="">{{related.name}}</h2>
+                    <h3>Genre:&nbsp;{{related.genres[0]}}</h3>
 
-                <div class="btnContainer">
-                    <form name="getPreview" ng-submit="preview(related.id)">
-                        <button class="smallBtn previewBtn col-xs-6 col-sm-6" type="submit">preview</button>
-                    </form>
-                    <form name="getTrack" ng-submit="track(related.id)">
-                        <a href="{{tracks.tracks[0].external_urls.spotify}}" target="_blank"><button class="smallBtn col-xs-6 col-sm-6 trackBtn">top track</button></a>
-                    </form>
-                    <a href="{{related.external_urls.spotify}}" target="_blank"><button class="smallBtn col-xs-6 col-sm-6">spotify page</button></a>
+                    <div class="btnContainer">
+                        <form name="getPreview" ng-submit="preview(related.id)">
+                            <button class="smallBtn previewBtn col-xs-6 col-sm-6" type="submit">preview</button>
+                        </form>
+                        <form name="getTrack" ng-submit="track(related.id)">
+                            <a href="{{tracks.tracks[0].external_urls.spotify}}"><button class="smallBtn col-xs-6 col-sm-6 trackBtn">top track</button></a>
+                        </form>
+                        <a href="{{related.external_urls.spotify}}" target="_blank"><button class="smallBtn col-xs-6 col-sm-6">spotify page</button></a>
 
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
     </div>
   </div>
