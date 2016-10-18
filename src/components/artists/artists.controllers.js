@@ -18,6 +18,12 @@ spotifyApp.controller('artistSearchController', function($scope, $http){
         $scope.click = true;
       })
     })
+    .catch(function(){
+      console.log("error");
+      $scope.error = "whoops. we didn't find anyone with that name.";
+      $scope.click = false;
+    })
+  }
   }
 
 })
