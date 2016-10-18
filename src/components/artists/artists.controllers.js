@@ -11,7 +11,6 @@ spotifyApp.controller('artistSearchController', function($scope, $http){
       $scope.click = false;
       $scope.artist = data;
       $scope.error = "";
-      console.log(data);
       artistID = data.artists.items[0].id;
     })
     .then(function(){
